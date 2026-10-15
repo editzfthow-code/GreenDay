@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "app": "greenday",
+    "type": "announcements",
+    "total": 1,
+    "aktif": 1,
+    "updatedAt": "2026-10-15T00:37:31.635Z"
+  },
+  "items": [
+    {
+      "id": "4539c2a6-5166-41c1-88a5-fa93c1e6c2b4",
+      "title": "Fitur add teman",
+      "body": "Tunggu update",
+      "date": "2026-10-15",
+      "active": true
+    }
+  ]
+}
