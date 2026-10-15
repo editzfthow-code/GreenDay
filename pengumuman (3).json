@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "app": "greenday",
+    "type": "announcements",
+    "total": 1,
+    "aktif": 1,
+    "updatedAt": "2026-10-15T03:08:46.804Z"
+  },
+  "items": [
+    {
+      "id": "79abefc7-037d-4af7-91df-831864a20c77",
+      "title": "Afgan",
+      "body": "hai test",
+      "date": "2026-10-15",
+      "active": true
+    }
+  ]
+}
