@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin GreenDay — Pengelola Pengumuman</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6ef;--surface:#fffdf8;--surface2:#edf0e5;--line:#e0e4d5;--lineS:#c9d1bd;
+  --text:#1e2a22;--muted:#63736a;--faint:#8d9b91;--primary:#2e6b4e;--onP:#f2f8f0;--soft:#e2efe4;
+  --red:#ac4630;--redsoft:#f7e2db;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font:400 15px/1.55 Sora,ui-sans-serif,sans-serif;padding:18px 16px 70px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:660px;margin:0 auto}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.logo{width:40px;height:40px;border-radius:13px;background:var(--primary);color:var(--onP);display:grid;place-items:center;flex:none}
+.top h1{font-family:Fraunces,serif;font-size:24px;line-height:1.15}
+.sub{color:var(--muted);font-size:13.5px;margin-bottom:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 1px 2px rgba(28,42,33,.05),0 14px 34px -20px rgba(28,42,33,.22);margin-bottom:16px}
+h2{font-family:Fraunces,serif;font-size:17px;margin-bottom:12px}
+.lbl{display:block;font:600 12.5px Sora;color:var(--muted);margin:0 0 6px 2px}
+.field{margin-bottom:13px}
+.inp{width:100%;border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:11px 13px;font:500 16px Sora;color:var(--text);min-height:46px}
+textarea.inp{resize:vertical;line-height:1.55}
+.inp:focus{outline:none;border-color:var(--primary)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:430px){.row{grid-template-columns:1fr}}
+.chk{display:flex;align-items:center;gap:10px;font:600 13.5px Sora;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:13px;padding:11px 17px;font:600 14px Sora;min-height:44px;cursor:pointer;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.b-primary{background:var(--primary);color:var(--onP)}
+.b-ghost{background:var(--surface2);color:var(--text)}
+.b-danger{background:var(--redsoft);color:var(--red)}
+.b-sm{padding:7px 12px;min-height:36px;font-size:12.5px;border-radius:10px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.err{color:var(--red);font:600 12.5px Sora;min-height:18px;margin-bottom:6px}
+.it{border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px}
+.it:last-child{margin-bottom:0}
+.it-t{font-weight:600;font-size:14.5px;overflow-wrap:break-word}
+.it-b{color:var(--muted);font-size:13px;margin-top:3px;white-space:pre-line;overflow-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.it-m{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font:600 11.5px Sora;color:var(--faint);align-items:center}
+.chip{padding:2.5px 9px;border-radius:99px;font:700 11px Sora}
+.c-on{background:var(--soft);color:var(--primary)}
+.c-off{background:var(--surface2);color:var(--faint)}
+.it-btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.empty{text-align:center;color:var(--muted);padding:26px 10px;font-size:13.5px}
+.steps{counter-reset:s;list-style:none}
+.steps li{counter-increment:s;position:relative;padding:0 0 14px 38px;color:var(--muted);font-size:13.5px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:99px;background:var(--soft);color:var(--primary);font:700 13px Sora;display:grid;place-items:center}
+.steps li b{color:var(--text)}
+.note{font-size:12px;color:var(--faint);margin-top:12px;line-height:1.6}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:var(--text);color:var(--surface);padding:12px 18px;border-radius:13px;font:600 13px Sora;z-index:9;animation:up .25s}
+@keyframes up{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5v-8"/><path d="M12 13.5c0-4.6-3-7-7.5-7 0 4.8 3 7 7.5 7Z"/><path d="M12 11c0-3.6 2.4-6 6.8-6 0 4.3-2.4 6-6.8 6Z"/></svg></span>
+    <h1>Admin GreenDay</h1>
+  </div>
+  <p class="sub">Kelola pengumuman & kabar "fitur yang akan datang" yang tampil di aplikasi — tanpa menyentuh kode sama sekali.</p>
+
+  <div class="card">
+    <h2 id="formTitle">Tulis Pengumuman Baru</h2>
+    <div class="field"><label class="lbl" for="fTitle">Judul (wajib)</label>
+      <input class="inp" id="fTitle" maxlength="120" placeholder="Misal: Fitur baru akan datang: Pengingat Otomatis"></div>
+    <div class="field"><label class="lbl" for="fBody">Isi pengumuman</label>
+      <textarea class="inp" id="fBody" rows="4" maxlength="1000" placeholder="Tulis detail di sini..."></textarea></div>
+    <div class="row">
+      <div class="field"><label class="lbl" for="fDate">Tanggal (opsional)</label>
+        <input type="date" class="inp" id="fDate"></div>
+      <div class="field"><label class="lbl">Status</label>
+        <label class="chk" style="min-height:46px"><input type="checkbox" id="fActive" checked> Tampilkan di aplikasi</label></div>
+    </div>
+    <p class="err" id="fErr"></p>
+    <div class="actions">
+      <button class="btn b-primary" id="btnSave">Tambah Pengumuman</button>
+      <button class="btn b-ghost" id="btnCancel" hidden>Batal Edit</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Daftar Pengumuman</h2>
+    <div id="list"></div>
+  </div>
+
+  <div class="card">
+    <h2>Terapkan ke Aplikasi</h2>
+    <ol class="steps">
+      <li><b>Unduh berkas</b> dengan tombol di bawah — hasilnya bernama <b>pengumuman.json</b>.</li>
+      <li><b>Unggah / timpa</b> file <b>pengumuman.json</b> di folder aplikasi pada hostingmu (GitHub: tombol "Add file → Upload files" lalu commit; Netlify: seret ulang folder GreenDay-mu).</li>
+      <li>Selesai — pengumuman otomatis muncul di halaman <b>Beranda</b> aplikasi untuk semua pengguna saat mereka online, dan <b>pengguna yang mengaktifkan notifikasi akan menerima pemberitahuan otomatis</b> untuk pengumuman baru.</li>
+    </ol>
+    <div class="actions">
+      <button class="btn b-primary" id="btnExport">Unduh pengumuman.json</button>
+      <button class="btn b-ghost" id="btnImport">Impor pengumuman.json</button>
+      <button class="btn b-danger" id="btnClear">Kosongkan</button>
+    </div>
+    <p class="note">Daftar di halaman ini tersimpan otomatis di browser ini (LocalStorage) — kamu bisa menutup halaman dan melanjutkan kapan saja. Tombol "Impor" dipakai untuk memindahkan daftar ke browser/laptop lain lewat file pengumuman.json.</p>
+  </div>
+</div>
+
+<input type="file" id="imporInp" accept="application/json,.json" hidden>
+
+<script>
+"use strict";
+const KEY="greenday.admin.pengumuman";
+let items=[], editId=null;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid=()=> (window.crypto&&crypto.randomUUID)?crypto.randomUUID():"a"+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const MONTHS=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+function fmtDate(iso){ if(!/^\d{4}-\d{2}-\d{2}$/.test(iso||"")) return ""; const p=iso.split("-"); return `${+p[2]} ${MONTHS[+p[1]-1]} ${p[0]}`; }
+
+function load(){ try{ const v=JSON.parse(localStorage.getItem(KEY)); if(Array.isArray(v)) items=v.filter(x=>x&&typeof x==="object"); }catch(e){ items=[]; } }
+function save(){ try{ localStorage.setItem(KEY,JSON.stringify(items)); }catch(e){ toast("Gagal menyimpan di browser ini."); } }
+function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2600); }
+
+function render(){
+  const box=$("#list");
+  if(!items.length){ box.innerHTML='<p class="empty">Belum ada pengumuman. Tulis yang pertama di form atas.</p>'; return; }
+  box.innerHTML=items.map(it=>`
+    <div class="it">
+      <div class="it-t">${esc(it.title)}</div>
+      ${it.body?`<div class="it-b">${esc(it.body)}</div>`:""}
+      <div class="it-m">
+        <span class="chip ${it.active?"c-on":"c-off"}">${it.active?"Aktif":"Nonaktif"}</span>
+        ${it.date?`<span>${esc(fmtDate(it.date))}</span>`:""}
+      </div>
+      <div class="it-btns">
+        <button class="btn b-sm b-ghost" data-act="toggle" data-id="${it.id}">${it.active?"Nonaktifkan":"Aktifkan"}</button>
+        <button class="btn b-sm b-ghost" data-act="edit" data-id="${it.id}">Edit</button>
+        <button class="btn b-sm b-danger" data-act="del" data-id="${it.id}">Hapus</button>
+      </div>
+    </div>`).join("");
+}
+
+function resetForm(){
+  editId=null;
+  $("#fTitle").value=""; $("#fBody").value=""; $("#fDate").value=""; $("#fActive").checked=true;
+  $("#fErr").textContent="";
+  $("#btnSave").textContent="Tambah Pengumuman";
+  $("#formTitle").textContent="Tulis Pengumuman Baru";
+  $("#btnCancel").hidden=true;
+}
+
+ $("#btnSave").addEventListener("click",()=>{
+  const title=$("#fTitle").value.trim();
+  if(!title){ $("#fErr").textContent="Judul pengumuman tidak boleh kosong."; $("#fTitle").focus(); return; }
+  const data={ title, body:$("#fBody").value.trim(), date:$("#fDate").value, active:$("#fActive").checked };
+  if(editId){ const it=items.find(x=>x.id===editId); if(it) Object.assign(it,data); toast("Pengumuman diperbarui."); }
+  else { items.push({ id:uid(), ...data }); toast("Pengumuman ditambahkan."); }
+  save(); render(); resetForm();
+});
+
+ $("#btnCancel").addEventListener("click",resetForm);
+
+ $("#list").addEventListener("click",e=>{
+  const b=e.target.closest("[data-act]"); if(!b) return;
+  const it=items.find(x=>x.id===b.dataset.id); if(!it) return;
+  if(b.dataset.act==="toggle"){ it.active=!it.active; save(); render(); }
+  else if(b.dataset.act==="edit"){
+    editId=it.id;
+    $("#fTitle").value=it.title; $("#fBody").value=it.body||"";
+    $("#fDate").value=it.date||""; $("#fActive").checked=!!it.active;
+    $("#fErr").textContent="";
+    $("#btnSave").textContent="Simpan Perubahan";
+    $("#formTitle").textContent="Edit Pengumuman";
+    $("#btnCancel").hidden=false;
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  else if(b.dataset.act==="del"){
+    if(!confirm('Hapus pengumuman "'+it.title+'"?')) return;
+    items=items.filter(x=>x.id!==it.id);
+    if(editId===it.id) resetForm();
+    save(); render(); toast("Pengumuman dihapus.");
+  }
+});
+
+ $("#btnExport").addEventListener("click",()=>{
+  if(!items.length){ toast("Daftar masih kosong — tidak ada yang diunduh."); return; }
+  const payload={
+    meta:{ app:"greenday", type:"announcements", total:items.length, aktif:items.filter(x=>x.active).length, updatedAt:new Date().toISOString() },
+    items: items.map(x=>({ id:x.id, title:x.title, body:x.body||"", date:x.date||"", active:x.active!==false }))
+  };
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob); a.download="pengumuman.json";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+  toast("pengumuman.json berhasil diunduh.");
+});
+
+ $("#btnImport").addEventListener("click",()=>$("#imporInp").click());
+ $("#imporInp").addEventListener("change",e=>{
+  const f=e.target.files[0]; e.target.value=""; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{
+    let obj=null; try{ obj=JSON.parse(r.result); }catch(err){}
+    if(!obj||!obj.meta||obj.meta.app!=="greenday"||!Array.isArray(obj.items)){ toast("Berkas tidak dikenal."); return; }
+    if(!confirm("Impor akan MENGGANTI daftar di halaman ini. Lanjutkan?")) return;
+    items=obj.items.filter(x=>x&&typeof x==="object").map(x=>({
+      id:(typeof x.id==="string"&&x.id)?x.id:uid(),
+      title:String(x.title||"").slice(0,120),
+      body:String(x.body||"").slice(0,1000),
+      date:/^\d{4}-\d{2}-\d{2}$/.test(x.date||"")?x.date:"",
+      active:x.active!==false
+    }));
+    save(); render(); resetForm(); toast("Daftar pengumuman berhasil diimpor.");
+  };
+  r.readAsText(f);
+});
+
+ $("#btnClear").addEventListener("click",()=>{
+  if(!items.length) return;
+  if(!confirm("Kosongkan seluruh daftar pengumuman di halaman ini?")) return;
+  items=[]; save(); render(); resetForm(); toast("Daftar dikosongkan.");
+});
+
+load(); render();
+</script>
+</body>
+</html>

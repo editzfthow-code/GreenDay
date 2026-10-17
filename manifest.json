@@ -1,0 +1,23 @@
+{
+  "name": "GreenDay — Shared Daily Productivity",
+  "short_name": "GreenDay",
+  "description": "Tugas, jurnal, kebiasaan, kalender, catatan, target, timer fokus, dan notifikasi cerdas — produktivitas harian yang tenang, dengan profil untuk tiap anggota keluarga.",
+  "lang": "id",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f6ef",
+  "theme_color": "#2e6b4e",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Tambah Tugas", "short_name": "Tugas", "url": "./index.html#tasks", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] },
+    { "name": "Tulis Jurnal", "short_name": "Jurnal", "url": "./index.html#journal", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] }
+  ]
+}

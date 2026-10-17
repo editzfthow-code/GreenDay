@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "app": "greenday",
+    "type": "announcements",
+    "total": 1,
+    "aktif": 1,
+    "updatedAt": "2026-10-17T00:00:00.000Z"
+  },
+  "items": [
+    {
+      "id": "greenday-v3-rilis",
+      "title": "GreenDay v3 sudah rilis! 🌱",
+      "body": "Yang baru di pembaruan ini:\n• Timer Fokus (Pomodoro) — mulai dari tombol ▶ di tiap tugas atau aksi cepat Beranda.\n• Notifikasi cerdas — pemberitahuan otomatis saat jam tugas terlewat & saat ada pengumuman baru. Aktifkan di Pengaturan → Notifikasi.\n• Statistik baru — streak aktif, 14 lencana pencapaian, tren 12 minggu, dan rekap menit fokus.\n• Pengguna bersama — buat profil terpisah untuk tiap anggota keluarga di Pengaturan → Pengguna bersama.\n\nSelamat mencoba!",
+      "date": "2026-10-17",
+      "active": true
+    }
+  ]
+}
