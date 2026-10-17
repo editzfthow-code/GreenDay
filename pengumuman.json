@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "app": "greenday",
+    "type": "announcements",
+    "total": 5,
+    "aktif": 5,
+    "updatedAt": "2026-10-17T00:00:00.000Z"
+  },
+  "items": [
+    {
+      "id": "greenday-v8-rilis",
+      "title": "GreenDay v8 — Sahabat JARAK JAUH! 🌍",
+      "body": "Yang baru di v8:\n• MODE JARAK JAUH — temanmu pakai GreenDay di HP lain? Buka halaman Sahabat → seksi Jarak Jauh → Aktifkan. Kamu dapat Kode Sahabat (misal: budi123) + PIN.\n• AJAK BEDA HP — tukar kode lewat WhatsApp, tempel di kolom Ajak, dia Terima/Tolak dari lonceng notifikasinya.\n• KADO & SAPAAN KILAT — kirim kado (5 poin) dan sapaan yang benar-benar sampai ke HP temanmu.\n• PAPAN SAHABAT — mode 'Sahabat saja' kini menggabungkan teman satu HP dan beda HP (tag 'jauh'), tersinkon otomatis.\n• KARTU SAHABAT — profil teman jauh (level, poin, streak, lencana, 14 hari) selalu segar, bukan snapshot lama.\n\nCatatan: ke cloud hanya terkirim ringkasan profilmu (nama, avatar, poin, level, streak, lencana, 14 hari). Isi tugas & jurnal TETAP di HP-mu. Butuh internet — saat offline aplikasi tetap jalan seperti biasa. Selamat berteman jarak jauh!",
+      "date": "2026-10-17",
+      "active": true,
+      "penting": false
+    },
+    {
+      "id": "greenday-v7-rilis",
+      "title": "GreenDay v7 — sekarang bisa berteman: SAHABAT! 🤝",
+      "body": "Yang baru di v7:\n• TAMBAH SAHABAT — buka sidebar 'Sahabat', pilih profil lain (misal saudara/teman yang login di GreenDay yang sama), ketuk 'Ajak'. Dia menerima permintaannya di lonceng notifikasi dan bisa Terima/Tolak langsung dari notifikasinya.\n• KARTU SAHABAT — klik ikon orang di daftar sahabat: lihat level, poin, streak, lencana, dan aktivitas 14 hari terakhir temanmu.\n• KIRIM KADO — tukar 5 poin jadi kue/petir/bintang + pesan singkat untuk sahabat.\n• SAPAAN KILAT — kirim semangat acak ('Semangat! 💪') ke sahabatmu.\n• PAPAN SAHABAT — di Statistik, papan peringkat kini bisa mode 'Sahabat saja'.\n• KARTU JARAK JAUH — teman di HP lain? Bagikan kartu profilmu sebagai kode lewat WhatsApp, dia impor di halaman Sahabat GreenDay-nya (snapshot).\n\nCatatan: sahabat hanya berlaku antar profil pada web/perangkat yang sama — tanpa server, tanpa akun, data tetap lokal. Selamat berteman!",
+      "date": "2026-10-17",
+      "active": true,
+      "penting": false
+    },
+    {
+      "id": "greenday-v6-rilis",
+      "title": "GreenDay v6 — full fitur untuk keluarga!",
+      "body": "Yang baru di v6:\n• ATUR PENGUMUMAN — buat pengumuman langsung dari dalam aplikasi: buka lonceng Pusat Notifikasi lalu ketuk Atur Pengumuman. Tandai PENTING agar tampil sebagai kartu besar di Beranda.\n• TAB FILTER — panel lonceng kini bertab: Semua / Tugas / Pengumuman / Lainnya.\n• TOKO HADIAH — tukar poin semangat dengan hadiah nyata dari orang tua (sidebar: Toko Hadiah).\n• REAKSI KELUARGA — beri 👍 untuk tugas yang diselesaikan anggota lain di halaman Statistik (Sorotan keluarga).\n• HEATMAP — peta aktivitas 12 minggu ala GitHub di Statistik.\n• DRAG & DROP — geser kartu tugas (pegangan di kiri kartu) untuk menyusun urutanmu sendiri.\n• Suara 'ting' halus setiap popup notifikasi muncul.\n\nSemua fitur tetap berjalan tanpa izin browser dan tanpa server. Selamat mencoba!",
+      "date": "2026-10-17",
+      "active": true,
+      "penting": true
+    },
+    {
+      "id": "greenday-v5-rilis",
+      "title": "GreenDay v5 — popup notifikasi & poin semangat!",
+      "body": "Yang baru di v5:\n• POPUP DI BERANDA — kartu notifikasi kini muncul otomatis di layar saat aplikasi dibuka: tugas yang kelewat jam, pengumuman baru, level naik, dan lencana baru. Bisa dimatikan/dinyalakan di Pengaturan.\n• POIN & LEVEL — tugas selesai, jurnal, kebiasaan, dan sesi fokus menghasilkan poin. Kumpulkan poin untuk naik level: Pemula, Pengerja Keras, Konsisten, Produktif, Ahli, Master, Legenda!\n• PAPAN PERINGKAT — lihat siapa anggota keluarga paling rajin minggu ini di halaman Statistik.\n• Confetti + bunyi perayaan saat menyelesaikan tugas & naik level.\n\nSelamat mengejar level Legenda!",
+      "date": "2026-10-17",
+      "active": true
+    },
+    {
+      "id": "greenday-v4-rilis",
+      "title": "GreenDay v4 — tampilan baru & Pusat Notifikasi",
+      "body": "Yang baru di v4:\n• Pusat Notifikasi — lonceng di pojok atas dengan lencana merah; tugas terlewat, pengumuman baru, sesi fokus, dan pencapaian streak langsung tercatat di dalam aplikasi. Selalu aktif tanpa izin browser.\n• Tampilan baru — gradasi hijau segar, tombol + melayang untuk tambah cepat, dan spanduk peringatan tugas terlambat di Beranda.\n• Tugas lebih lengkap — sub-langkah (checklist), pengulangan harian/mingguan/bulanan, dan penanggung jawab untuk dipakai bersama keluarga.\n\nSelamat mencoba!",
+      "date": "2026-10-17",
+      "active": true
+    }
+  ]
+}
