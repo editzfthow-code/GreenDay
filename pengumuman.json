@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "app": "greenday",
+    "type": "announcements",
+    "total": 2,
+    "aktif": 2,
+    "updatedAt": "2026-10-18T12:00:00.000Z"
+  },
+  "items": [
+    {
+      "id": "greenday-v51-rilis",
+      "title": "GreenDay v5.1 — lebih ringan, lebih rapi, lebih peduli 🌱",
+      "body": "Yang baru di v5.1:\n• Cici langsung menyambutmu setiap kali web dibuka — sapaan berubah sesuai waktu hari dan jumlah tugasmu.\n• Notifikasi di luar web — tugas terlambat kini muncul di panel notifikasi HP/komputer walau kamu sedang di aplikasi lain. Aktifkan di Pengaturan → Pusat Notifikasi → \"Notifikasi di luar web\".\n• Bug Tur Fitur diperbaiki total — sorotan kini selalu presisi mengikuti elemen (termasuk langkah Jurnal yang dulu hilang), titik progres tidak meluap di layar kecil, dan latar tidak bisa digulir saat tur.\n• Teks lebih rapi di semua halaman — pemenggalan kata panjang, judul tidak terpotong sembarangan, angka rata dengan tabular.\n• Terasa jauh lebih ringan — ratusan efek blur berlapis dan animasi tanpa henti dipangkas tanpa mengubah tampilan; pindah halaman jadi seketika.",
+      "date": "2026-10-18",
+      "active": true
+    },
+    {
+      "id": "greenday-v5-rilis",
+      "title": "GreenDay v5 — tampilan Fresh Glass & Cici si tunas 🌱",
+      "body": "Yang baru di v5:\n• Cici, maskot imut — tunas kecil di pojok kiri bawah yang siap mengajarinmu semua fitur lewat tips kontekstual, panel tips, dan Tur Fitur interaktif 16 langkah.\n• Sistem XP & Level — tugas, kebiasaan, jurnal, fokus, dan target memberi XP. Naik level = confetti!\n• Command Palette — tekan Ctrl+K (atau ketuk ikon kaca pembesar) untuk mencari tugas, catatan, jurnal, agenda, dan target sekaligus.\n• Tampilan Fresh Glass — kartu kaca blur, latar gradien bergerak halus, navigasi pil melayang, animasi micro-interaction, dan 5 warna aksen (Hutan, Sage, Lumut, Laut, Senja).\n• Lebih lengkap & bebas bug — 5 error sintaks v4 diperbaiki total, efek suara ringan (bisa dimatikan), grafik aktivitas 7 hari di Beranda, dan statistik suasana hati dari jurnal.\n\nSelamat menikmati GreenDay yang baru!",
+      "date": "2026-10-18",
+      "active": true
+    }
+  ]
+}
