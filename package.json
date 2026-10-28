@@ -1,0 +1,27 @@
+{
+  "name": "greenday",
+  "version": "5.4.0",
+  "private": true,
+  "description": "GreenDay — Daily List & Personal Productivity",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0",
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "z-ai-web-dev-sdk": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "typescript": "^5.4.0"
+  }
+}
