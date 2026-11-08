@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "app": "greenday",
+    "type": "announcements",
+    "total": 11,
+    "aktif": 11,
+    "updatedAt": "2026-11-07T04:00:00.000Z"
+  },
+  "items": [
+    {
+      "id": "greenday-v610-rilis",
+      "title": "GreenDay v6.1.0 — Dirapikan, lebih ringan, dan lebih manusiawi 🌿",
+      "body": "Yang baru di v6.1.0:\n• CSS dirapikan: 5 blok gaya digabung jadi satu, aturan mati dibuang — tampilan sama, berkas lebih sehat.\n• Lebih ringan: efek kaca (blur) kini hanya di header, navigasi bawah & modal; animasi hanya transform/opacity; font diringkas jadi 2 keluarga + ikut cache offline.\n• Beranda baru: kartu \"Fokus utama hari ini\" + ring progres harian (tugas · kebiasaan · fokus); aksi cepat maksimal 5 + \"Lainnya\".\n• Tombol \"+\" kini speed-dial: Tugas, Jurnal, Catatan, Fokus.\n• Tema baru: Otomatis (ikuti sistem) selain terang/gelap.\n• Halaman kosong kini ramah — Cici menyapa + tombol aksi.\n• Perbaikan: \"Jadikan tugas\" dari Cici tidak menduplikasi tugas yang sudah ada; sesi istirahat fokus kini berbunyi & bernotifikasi saat selesai; tanggal & zona waktumu ikut dikirim ke Cici (tidak ada lagi geseran ±1 hari).\n• Semua data lama tetap utuh.",
+      "date": "2026-11-07",
+      "active": true
+    },
+    {
+      "id": "greenday-v601-perbaikan",
+      "title": "GreenDay v6.0.1 — Tata letak dirapikan & bug Jurnal diperbaiki 🌿",
+      "body": "Yang diperbaiki di v6.0.1:\n• Judul halaman (mis. \"Pengaturan\") tidak lagi terpecah per huruf di layar sempit; tombol cari/lonceng/tema selalu utuh sebaris dengan judul.\n• Ikon bulan/matahari kini tepat di tengah tombol tema.\n• Ruang kosong di bawah kartu terakhir dipangkas; tombol Cici & tombol + kini sama besar dan sejajar rapi.\n• Halaman Jurnal tidak lagi error saat ada jurnal dalam 7 hari terakhir (kartu \"Refleksi minggu ini\").\n• Semua data lama tetap utuh.",
+      "date": "2026-11-07",
+      "active": true
+    },
+    {
+      "id": "greenday-v600-rilis",
+      "title": "GreenDay v6.0.0 — Calm Grove: upgrade besar, desain premium & Cici makin pintar 🌱",
+      "body": "Yang baru di v6.0.0:\n• Desain baru \"Calm Grove\" — premium minimalist: sage/forest green, latar netral lembut, permukaan bersih, mode gelap hijau tua.\n• Tugas 2.0: tag & filter tag, catatan tugas, tombol Urungkan saat selesai, ringkasan harian.\n• Kebiasaan 2.0: jadwal hari fleksibel, target mingguan, kategori, heatmap 10 minggu, insight hari terbaik.\n• Jurnal 2.0: rasa syukur (3 hal), prompt refleksi, autosave, ekspor Markdown, refleksi mingguan.\n• Catatan 2.0: tag, arsip, pencarian menyeluruh.\n• Target: status (berjalan/selesai/dijeda), riwayat, saran langkah berikutnya, perayaan confetti.\n• Kalender: tampilan Minggu & Hari, kebiasaan tampil di agenda harian.\n• Fokus 2.0: durasi kustom 1-180 menit, target fokus harian, mode bebas gangguan layar penuh.\n• Statistik: tren fokus 7 hari, ringkasan bulan ini, riwayat aktivitas.\n• Cici AI: aksi cepat (rencanakan hari, prioritaskan, prompt refleksi), kartu konfirmasi aksi nyata (buat tugas/target), izin konteks data (default mati), tombol kirim ulang, pengaturan ngobrol.\n• Beranda: Rencana Hari Ini + Tinjau Harian/Mingguan.\n• PWA: notifikasi pembaruan dengan tombol Muat ulang, cache v6.\n• Data: schema v6 dengan migrasi aman — semua data lama tetap utuh.",
+      "date": "2026-11-05",
+      "active": true
+    },
+    {
+      "id": "greenday-v560-rilis",
+      "title": "GreenDay v5.6.0 — Rombak Total: puluhan bug kecil diburu & ditutup 🌱",
+      "body": "Yang baru di v5.6.0:\n• Warna mata Cici kini tampil berwarna di pilihan kustom (gradient CSS rusak diperbaiki).\n• Chip timer fokus tidak lagi tertutup tombol Cici di HP; gelembung Cici otomatis naik saat sesi fokus.\n• \"Hapus semua data\" kini benar-benar menghapus riwayat ngobrol Cici + menyetel ulang notifikasi (tidak ada lagi notifikasi hantu).\n• Aplikasi tak lagi blank di browser yang memblokir penyimpanan; XP liar dari cadangan korup tak bisa membekukan tab.\n• Chat Cici: ada batas waktu klien 60 detik (tombol tak terkunci selamanya), chip cepat tidak lagi menghapus draf yang sedang diketik, chip ikut nama kustom maskot, dan pesan gagal menyebut alamat server yang benar.\n• Backend AI: rate-limit per pengunjung + timer dibersihkan.\n• PWA: cache offline tak bisa diracuni halaman lain, notifikasi kini membuka halaman tujuannya, ikon Tur Fitur muncul, judul tab = GreenDay, plus perbaikan aksesibilitas (Beranda punya judul h1, panggung elus bisa dikontrol keyboard, grafik punya label).\n• Versi sidebar kini otomatis mengikuti APP_VERSION (tanpa risiko tidak sinkron).",
+      "date": "2026-10-28",
+      "active": true
+    },
+    {
+      "id": "greenday-v552-rilis",
+      "title": "GreenDay v5.5.2 — sambungkan Cici AI dari hosting statis (GitHub Pages) 🌱",
+      "body": "Yang baru di v5.5.2:\n• Pengaturan CICI_API_URL — kini frontend bisa di-hosting statis (mis. GitHub Pages) dan tetap tersambung ke otak AI Cici: cukup isi alamat backend di satu baris di index.html.\n• Backend /api/cici dilengkapi header CORS + dukungan preflight OPTIONS, jadi aman dipanggil lintas domain.\n• Pesan offline kini juga memberi tahu langkah khusus pengguna GitHub Pages.\n• Tidak ada perubahan fitur lain — Ruang Cici dan semua fitur tetap sama.",
+      "date": "2026-10-27",
+      "active": true
+    },
+    {
+      "id": "greenday-v551-rilis",
+      "title": "GreenDay v5.5.1 — Cici nggak capek, cuma butuh otak AI-nya nyala 🌱",
+      "body": "Yang baru di v5.5.1:\n• Pesan gagal chat dijelaskan jujur — dulu kalau server AI belum nyala, Cici bilang \"kepala aku berat\" sehingga terkesan dia capek. Sekarang dia jelasin dengan manis: itu mode offline karena server /api/cici belum aktif, lengkap dengan langkah mengatasinya (jalankan lewat Next.js: npm run dev).\n• Tidak ada perubahan fitur lain — Ruang Cici, kustomisasi, dan semua fitur tetap sama.",
+      "date": "2026-10-27",
+      "active": true
+    },
+    {
+      "id": "greenday-v550-rilis",
+      "title": "GreenDay v5.5.0 — Ruang Cici: tempat khusus Cici + ngobrol bareng dia 🌱",
+      "body": "Yang baru di v5.5.0:\n• Ruang Cici — tempat khusus baru untuk sahabat imutmu! Buka lewat tombol Cici melayang, menu samping, atau Ctrl+K. Di dalamnya ada panggung elus-elus, kustom penampilan lengkap, dan...\n• Ngobrol sama Cici — sekarang Cici bisa diajak ngobrol apa aja! Dia memperkenalkan diri lebih dulu, menyapamu dengan lembut, dan selalu siap dengerin ceritamu. Ditanya siapa penciptanya? Dia bangga menjawab: AFF&Z.AI 💚\n• Cici makin imut — panggung lebih besar penuh dekor, gelembung obrolan baru yang manis, dan chip kustom yang kini langsung terlihat terpilih saat diganti (bug v5.4 diperbaiki).\n• Perbaikan bug & kerapian layout di berbagai halaman.",
+      "date": "2026-10-27",
+      "active": true
+    },
+    {
+      "id": "greenday-v532-rilis",
+      "title": "GreenDay v5.3.2 — bug mode terang/gelap beres total 🌱",
+      "body": "Yang baru di v5.3.2:\n• Warna bilah atas browser kini BENAR-BENAR ikut tema aplikasi — dulu saat mode gelap bilahnya malah hijau terang (kebalik), dan saat mode terang dengan HP dalam mode gelap bilahnya jadi abu-abu gelap khas Chrome. Sekarang ketiga varian bilah (biasa, sistem terang, sistem gelap) disinkronkan ke warna tema aktif, termasuk warna per aksen (Hutan/Sage/Lumut/Laut/Senja).\n• Tidak ada lagi kedipan \"terang lalu gelap\" saat membuka aplikasi — tema tersimpan kini dipasang sebelum halaman digambar.\n• Scrollbar dan elemen bawaan browser ikut terang/gelap, dan Chrome tidak lagi memaksa menggelapkan halaman saat HP dalam mode gelap.\n\nCatatan jujur: kalau Chrome/HP-mu dalam mode gelap sementara aplikasi dipasang di mode terang, Chrome memang menolak bilah berwarna terang (kebijakan Chrome, bukan bug aplikasi) — pasang aplikasi ke layar depan (Instal) supaya bebas dari bilah browser sepenuhnya.",
+      "date": "2026-10-19",
+      "active": true
+    },
+    {
+      "id": "greenday-v52-rilis",
+      "title": "GreenDay v5.2 — enteng, anti-lag, notifikasi tanpa buka web 🌱",
+      "body": "Yang baru di v5.2:\n• Jauh lebih ringan & anti-lag — latar mesh kini statis (tanpa blur berat & animasi tanpa henti), blur kartu dimatikan di ponsel, confetti disederhanakan, dan semua animasi berhenti otomatis saat tab tidak terlihat. Tampilan tetap sama persis.\n• Tombol Instal tidak lagi mengganggu — dulu ia tidak bisa hilang (bug display vs hidden); kini hanya muncul jika aplikasi BELUM terpasang di layar depan, ada tombol tutup (x) permanen, dan otomatis hilang setelah terpasang.\n• Notifikasi tugas terlambat muncul TANPA membuka web — begitu lewat jam tugas langsung muncul di panel notifikasi; saat aplikasi ditutup service worker tetap mengecek (makin sering kalau app dipasang ke layar depan), dan tidak ada notifikasi dobel.",
+      "date": "2026-10-18",
+      "active": true
+    },
+    {
+      "id": "greenday-v51-rilis",
+      "title": "GreenDay v5.1 — lebih ringan, lebih rapi, lebih peduli 🌱",
+      "body": "Yang baru di v5.1:\n• Cici langsung menyambutmu setiap kali web dibuka — sapaan berubah sesuai waktu hari dan jumlah tugasmu.\n• Notifikasi di luar web — tugas terlambat kini muncul di panel notifikasi HP/komputer walau kamu sedang di aplikasi lain. Aktifkan di Pengaturan → Pusat Notifikasi → \"Notifikasi di luar web\".\n• Bug Tur Fitur diperbaiki total — sorotan kini selalu presisi mengikuti elemen (termasuk langkah Jurnal yang dulu hilang), titik progres tidak meluap di layar kecil, dan latar tidak bisa digulir saat tur.\n• Teks lebih rapi di semua halaman — pemenggalan kata panjang, judul tidak terpotong sembarangan, angka rata dengan tabular.\n• Terasa jauh lebih ringan — ratusan efek blur berlapis dan animasi tanpa henti dipangkas tanpa mengubah tampilan; pindah halaman jadi seketika.",
+      "date": "2026-10-18",
+      "active": true
+    },
+    {
+      "id": "greenday-v5-rilis",
+      "title": "GreenDay v5 — tampilan Fresh Glass & Cici si tunas 🌱",
+      "body": "Yang baru di v5:\n• Cici, maskot imut — tunas kecil di pojok kiri bawah yang siap mengajarinmu semua fitur lewat tips kontekstual, panel tips, dan Tur Fitur interaktif 16 langkah.\n• Sistem XP & Level — tugas, kebiasaan, jurnal, fokus, dan target memberi XP. Naik level = confetti!\n• Command Palette — tekan Ctrl+K (atau ketuk ikon kaca pembesar) untuk mencari tugas, catatan, jurnal, agenda, dan target sekaligus.\n• Tampilan Fresh Glass — kartu kaca blur, latar gradien bergerak halus, navigasi pil melayang, animasi micro-interaction, dan 5 warna aksen (Hutan, Sage, Lumut, Laut, Senja).\n• Lebih lengkap & bebas bug — 5 error sintaks v4 diperbaiki total, efek suara ringan (bisa dimatikan), grafik aktivitas 7 hari di Beranda, dan statistik suasana hati dari jurnal.\n\nSelamat menikmati GreenDay yang baru!",
+      "date": "2026-10-18",
+      "active": true
+    }
+  ]
+}
