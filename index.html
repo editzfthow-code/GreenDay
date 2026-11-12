@@ -8420,5 +8420,63 @@ refresh();
 }catch(err){console.warn("GreenDay v5.7 plus:",err)}
 })();
 </script>
+
+     <script>
+// ========================================================
+// CICI DIRECT GROQ (TANPA CLOUDFLARE)
+// ========================================================
+(function() {
+  const GROQ_KEY = "gsk_TEMPEL_KUNCI_GROQ_KAMU_DISINI"; // <--- GANTI BAGIAN INI
+  
+  if (!GROQ_KEY || !GROQ_KEY.startsWith("gsk_")) {
+    console.warn("Cici: API Key Groq belum diisi di index.html.");
+    return;
+  }
+
+  const _origFetch = window.fetch;
+  window.fetch = async function(url, options) {
+    // Cegat panggilan Cici
+    if (typeof url === 'string' && url.includes('/api/cici')) {
+      const body = JSON.parse(options.body);
+      
+      const sysPrompt = `Kamu adalah ${body.profile?.ciciName || 'Cici'}, maskot tunas hijau imut di aplikasi GreenDay. Nada bicara: ${body.profile?.tone || 'manja'}. Data user: ${body.profile?.userName || 'Sahabat'}.\n` +
+        `Konteks harian: ${body.context || '(Pengguna belum mengizinkan akses data)'}.\n` +
+        (body.mode === 'action' 
+          ? 'KEMBALIKAN HANYA JSON VALID: {"reply":"balasan ramah", "action":{"type":"create_task|create_goal|plan_day|prioritize|reflection", "payload":{...}}}' 
+          : 'Jawab ramah, hangat, singkat 2-4 kalimat, bahasa Indonesia.');
+
+      const groqRes = await _origFetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Authorization": "Bearer " + GROQ_KEY },
+        body: JSON.stringify({
+          model: "llama-3.3-70b-versatile",
+          messages: [{ role: "system", content: sysPrompt }, ...body.messages],
+          temperature: 0.85,
+          max_tokens: 900
+        })
+      });
+      
+      const raw = await groqRes.json();
+      let text = raw.choices?.[0]?.message?.content || "Maaf, otak AI-ku sedang berasap...";
+      let finalData = { reply: text, action: null };
+      
+      if (body.mode === 'action') {
+        try {
+          const m = text.match(/\{[\s\S]*\}/);
+          const p = JSON.parse(m ? m[0] : text);
+          finalData = { reply: p.reply || text, action: p.action || null };
+        } catch(e) { finalData = { reply: text, action: null }; }
+      }
+
+      return new Response(JSON.stringify(finalData), { 
+        status: 200, 
+        headers: { 'Content-Type': 'application/json' } 
+      });
+    }
+    // Lanjutkan fetch normal untuk fungsi lain
+    return _origFetch.apply(this, arguments);
+  };
+})();
+     </script>
 </body>
 </html>
